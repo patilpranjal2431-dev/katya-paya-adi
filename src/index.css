@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Yatra One", Georgia, serif;
+  --font-serif: "Lora", Georgia, serif;
+  --font-devanagari: "Noto Sans Devanagari", "Lora", serif;
+  --color-antique-gold: #D4AF37;
+  --color-gold-bright: #F1D06B;
+  --color-cream: #F5E6C8;
+  --color-terracotta: #8C3B22;
+  --color-sienna: #5C2312;
+  --color-obsidian-earth: #1E0F05;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-serif);
+    scroll-behavior: smooth;
+    background-color: #180c04;
+    color: #F5E6C8;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.72);
+  }
+}
+
+.temple-backdrop {
+  background-color: #180c04;
+  background-image:
+    radial-gradient(ellipse at 50% 0%, rgba(140, 59, 34, 0.28) 0%, rgba(24, 12, 4, 0.88) 70%),
+    linear-gradient(180deg, rgba(22, 11, 4, 0.78) 0%, rgba(28, 14, 5, 0.86) 50%, rgba(18, 8, 3, 0.94) 100%),
+    url('/src/assets/images/temple_stone_wall_1795326827468.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.carved-panel {
+  background: rgba(30, 15, 5, 0.86);
+  border: 2px solid rgba(212, 175, 55, 0.65);
+  box-shadow:
+    0 16px 38px rgba(0, 0, 0, 0.65),
+    inset 0 1px 0 rgba(241, 208, 107, 0.14);
+  backdrop-filter: blur(6px);
+}
+
+.carved-subpanel {
+  background: rgba(20, 10, 4, 0.72);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.gold-text-glow {
+  text-shadow: 0 0 24px rgba(212, 175, 55, 0.45), 0 2px 8px rgba(0, 0, 0, 0.85);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes tabFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-tab-enter {
+  animation: tabFadeIn 220ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-tab-enter {
+    animation: none;
+  }
+  .temple-backdrop {
+    background-attachment: scroll;
+  }
+}

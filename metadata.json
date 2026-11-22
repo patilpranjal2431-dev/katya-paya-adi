@@ -1,0 +1,6 @@
+{
+  "name": "Kaṭapayādi Encoding System",
+  "description": "Interactive museum-grade educational explorer, visual mapping matrix, Devanagari/IAST decoder, semi-automatic chronogram encoder, and historical timeline for India's ancient Kaṭapayādi alphasyllabic numeral system.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
